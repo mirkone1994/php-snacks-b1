@@ -13,7 +13,7 @@ function get_average($numbers){
     $all_numbers = count($numbers);
     $all = array_sum($numbers);
     $average = $all / $all_numbers;
-    return $average;
+    return round($average, 2);
 }
 ?>
 <!DOCTYPE html>
