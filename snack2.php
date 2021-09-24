@@ -4,10 +4,17 @@ Ogni alunno avrà Nome, Cognome e un array contenente i suoi voti scolastici (se
 Stampare Nome, Cognome e la media dei voti di ogni alunno.*/
 
 $alumns = [
-    ['name' => 'Mirko', 'lastname' => 'Chiappori', $votes = ['10', '6', '7', '8', '5']],
-    ['name' => 'Giovanni', 'lastname' => 'Leoncini', $votes = ['9', '4', '10', '7', '10']],
-    ['name' => 'Lorenzo', 'lastname' => 'Cazzola', $votes = ['8', '5', '9', '7', '3']]
+    ['name' => 'Mirko', 'lastname' => 'Chiappori', 'votes' => [10, 6, 7, 8, 5]],
+    ['name' => 'Giovanni', 'lastname' => 'Leoncini', 'votes' => [9, 4, 10, 7, 10]],
+    ['name' => 'Lorenzo', 'lastname' => 'Cazzola', 'votes' => [8, 5, 9, 7, 3]]
 ];
+
+function get_average($numbers){
+    $all_numbers = count($numbers);
+    $all = array_sum($numbers);
+    $average = $all / $all_numbers;
+    return $average;
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -21,7 +28,7 @@ $alumns = [
     <?php foreach($alumns as $alumn) {?>
         <span><?=$alumn['name']?></span>
         <span><?=$alumn['lastname']?></span>
-        <span><?= array_sum($votes) / count($votes)?></span><br>
+        <span><?= get_average($alumn['votes'])?></span><br>
     <?php } ?>
 </body>
 </html>
