@@ -2,7 +2,7 @@
 $data = $_GET;
 if(empty($data['name']) || empty($data['age']) || empty($data['mail'])) {
     echo 'Errore';
-} else if(strlen($data['name'] <= 3) || is_numeric($data['name'])){
+} else if(strlen($data['name']) <= 3 || is_numeric($data['name'])){
     echo 'Nome utente errato';
 } else if(!is_numeric($data['age']) || $data['age'] < 18){
     echo 'Età non consentita';
